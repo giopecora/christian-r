@@ -76,11 +76,13 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser"
                     aria-expanded="true" aria-controls="collapseUser">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Users Management</span>
+                    <span>Gerenciamento de usuários</span>
                 </a>
                 <div id="collapseUser" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="">Users</a>
+                        @can('user_access')
+                            <a class="collapse-item" href="{{route('users.index')}}">Usuários</a>
+                        @endcan
                         <a class="collapse-item" href="cards.html">Role</a>
                         <a class="collapse-item" href="cards.html">Permission</a>
                     </div>
